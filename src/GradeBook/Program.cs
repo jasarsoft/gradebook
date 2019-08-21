@@ -10,34 +10,7 @@ namespace GradeBook
             var book = new Book("Scott's Grade Book");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
-            
-
-            var grades = new List<double>() {12.7, 10.3, 6.11, 4.1};
-            grades.Add(56.1);
-
-            var result = 0.0;
-            var highGrade = double.MinValue;
-            var lowGrade = double.MaxValue;
-            foreach(var number in grades)
-            {
-                highGrade = Math.Max(number, highGrade);
-                lowGrade = Math.Max(number, lowGrade);
-                result += number;
-            }
-            result /=grades.Count;
-            Console.WriteLine($"The lowest grade is {lowGrade:N1}");
-            Console.WriteLine($"The highest grade is {highGrade:N1}");
-            Console.WriteLine($"The avarage grade is {result:N1}");
-            
-
-            if (args.Length > 0)
-            {
-                Console.WriteLine($"Hello {args[0]}");
-            }
-            else
-            {
-                Console.WriteLine("Hello!");
-            }
+            book.ShowStatistics();
         }
     }
 }
