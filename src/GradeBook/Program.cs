@@ -12,8 +12,8 @@ namespace GradeBook
             book.AddGrade(90.5);
             var result = book.GetStatistics();
 
-            Console.WriteLine($"The lowest grade is {result.Low:N1}");
-            Console.WriteLine($"The highest grade is {result.High:N1}");
+            Console.WriteLine($"The lowest grade is {result.Low}");
+            Console.WriteLine($"The highest grade is {result.High}");
             Console.WriteLine($"The avarage grade is {result.Avarage:N1}");
         }
     }
