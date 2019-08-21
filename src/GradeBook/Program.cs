@@ -16,8 +16,10 @@ namespace GradeBook
             grades.Add(56.1);
 
             var result = 0.0;
+            var hightGrade = double.MinValue;
             foreach(var number in grades)
             {
+                hightGrade = Math.Max(number, hightGrade);
                 result += number;
             }
             result /=grades.Count;
