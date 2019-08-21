@@ -8,7 +8,14 @@ namespace GradeBook.Tests
         [Fact]
         public void Test1()
         {
+            //arrange
+            var x = 5;
+            var y = 2;
+            var excepted = 7;
 
+            var actual = x + y;
+
+            Assert.Equal(excepted, actual);
         }
     }
 }
