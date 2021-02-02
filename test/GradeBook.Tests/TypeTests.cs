@@ -14,7 +14,7 @@ namespace GradeBook.Tests
             Assert.Equal(3, x);
         }
 
-        private void SetInt(ref int z)
+        private void SetInt(ref Int32 z)
         {
             z = 42;
         }
