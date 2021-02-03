@@ -30,6 +30,11 @@ namespace GradeBook
             result.Low = double.MaxValue;
             for(var index = 0; index < grades.Count; index++)
             {
+                if (grades[index] == 42.1)
+                {
+                    break;
+                }
+
                 result.High = Math.Max(grades[index], result.High);
                 result.Low = Math.Max(grades[index], result.Low);
                 result.Avarage += grades[index];
