@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GradeBook
 {
@@ -12,8 +11,19 @@ namespace GradeBook
             book.AddGrade(90.5);
             var result = book.GetStatistics();
 
-            var input = Console.ReadLine();
-            var grade = double.Parse(input);
+            while (true)
+            {
+                Console.WriteLine("Enter a grade or 'q' to quit");
+                var input = Console.ReadLine();
+
+                if (input == "q")
+                {
+                    break;
+                }
+
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
+            }
 
             Console.WriteLine($"The lowest grade is {result.Low}");
             Console.WriteLine($"The highest grade is {result.High}");
