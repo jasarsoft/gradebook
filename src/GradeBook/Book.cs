@@ -10,7 +10,7 @@ namespace GradeBook
             this.grades = new List<double>();
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddGrade(char letter)
         {
             switch (letter)
             {
