@@ -40,6 +40,9 @@ namespace GradeBook
                 }
             }
 
+            book.Name = "";
+
+            Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The lowest grade is {result.Low}");
             Console.WriteLine($"The highest grade is {result.High}");
             Console.WriteLine($"The avarage grade is {result.Avarage:N1}");
