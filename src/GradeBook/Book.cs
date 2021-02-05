@@ -47,7 +47,7 @@ namespace GradeBook
             result.Avarage = 0.0;
             result.High = double.MinValue;
             result.Low = double.MaxValue;
-            for(var index = 0; index < grades.Count; index++)
+            for (var index = 0; index < grades.Count; index++)
             {
                 if (grades[index] == 42.1)
                 {
@@ -58,6 +58,7 @@ namespace GradeBook
                 result.Low = Math.Max(grades[index], result.Low);
                 result.Avarage += grades[index];
             }
+
             result.Avarage /= grades.Count;
 
             switch (result.Avarage)
@@ -78,25 +79,12 @@ namespace GradeBook
                     result.Letter = 'F';
                     break;
             }
+
             return result;
         }
 
         public List<double> grades;
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-            }
-        }
-        private string name;
+        public string Name { get; set; }
     }
 }
