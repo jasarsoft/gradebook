@@ -86,5 +86,7 @@ namespace GradeBook
         public List<double> grades;
 
         public string Name { get; set; }
+
+        private readonly string category = "Science";
     }
 }
