@@ -42,6 +42,7 @@ namespace GradeBook
 
             book.Name = "";
 
+            Console.WriteLine(Book.CATEGORY);
             Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The lowest grade is {result.Low}");
             Console.WriteLine($"The highest grade is {result.High}");
