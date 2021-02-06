@@ -3,10 +3,14 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+    public class NamedObject
     {
-        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+        public string Name { get; set; }
+    }
 
+    public class Book : NamedObject
+    {
         public Book(string name)
         {
             this.grades = new List<double>();
@@ -92,8 +96,6 @@ namespace GradeBook
         }
 
         public List<double> grades;
-
-        public string Name { get; set; }
 
         public const string CATEGORY = "Science";
     }
