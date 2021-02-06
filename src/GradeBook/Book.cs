@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
-    public class NamedObject
+    public class NamedObject: Object
     {
         public NamedObject(string name)
         {
