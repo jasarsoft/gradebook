@@ -25,7 +25,7 @@ namespace GradeBook
             Console.WriteLine($"The letter grade is {result.Letter}");
         }
 
-        private static void EnterGrades(Book inMemoryBook)
+        private static void EnterGrades(IBook inMemoryBook)
         {
             while (true)
             {
