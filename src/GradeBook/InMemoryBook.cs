@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace GradeBook
 {
@@ -25,6 +27,26 @@ namespace GradeBook
         event GradeAddedDelegate GradeAdded;
     }
 
+    public class DiskBook : Book
+    {
+        public DiskBook(string name) : base(name)
+        {
+        }
+
+        public override void AddGrade(double grade)
+        {
+            var writer = File.AppendText($"{Name}.txt");
+            writer.WriteLine(grade);
+        }
+
+        public override Statistics GetStatistics()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override event GradeAddedDelegate GradeAdded;
+    }
+
     public abstract class Book : NamedObject, IBook
     {
         protected Book(string name): base(name)
@@ -33,12 +55,9 @@ namespace GradeBook
         }
 
         public abstract void AddGrade(double grade);
-        public virtual Statistics GetStatistics()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Statistics GetStatistics();
 
-        public virtual event GradeAddedDelegate GradeAdded;
+        public abstract event GradeAddedDelegate GradeAdded;
     }
 
     public class InMemoryBook : Book
@@ -83,9 +102,9 @@ namespace GradeBook
             }
         }
 
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var result = new Statistics();
             result.Avarage = 0.0;
