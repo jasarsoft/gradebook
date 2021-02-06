@@ -6,7 +6,7 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new Book("Scott's Grade Book");
+            var book = new InMemoryBook("Scott's Grade InMemoryBook");
             book.GradeAdded += OnGradeAdded;
 
             book.AddGrade(89.1);
@@ -17,15 +17,15 @@ namespace GradeBook
 
             book.Name = "";
 
-            Console.WriteLine(Book.CATEGORY);
-            Console.WriteLine($"For the book named {book.Name}");
+            Console.WriteLine(InMemoryBook.CATEGORY);
+            Console.WriteLine($"For the inMemoryBook named {book.Name}");
             Console.WriteLine($"The lowest grade is {result.Low}");
             Console.WriteLine($"The highest grade is {result.High}");
             Console.WriteLine($"The avarage grade is {result.Avarage:N1}");
             Console.WriteLine($"The letter grade is {result.Letter}");
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(Book inMemoryBook)
         {
             while (true)
             {
@@ -40,7 +40,7 @@ namespace GradeBook
                 try
                 {
                     var grade = double.Parse(input);
-                    book.AddGrade(grade);
+                    inMemoryBook.AddGrade(grade);
                 }
                 catch (ArgumentException ex)
                 {
