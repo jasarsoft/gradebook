@@ -40,7 +40,7 @@ namespace GradeBook
         public Statistics()
         {
             Count = 0;
-            Avarage = 0.0;
+            //Avarage = 0.0;
             Sum = 0.0;
             High = Double.MinValue;
             Low = Double.MaxValue;
